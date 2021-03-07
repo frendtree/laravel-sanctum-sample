@@ -15,6 +15,13 @@ services:
       - postgres
     volumes:
       - .:/var/www/html
+  node:
+    image: library/node:15.11.0-stretch
+    tty: true
+    depends_on:
+      - postgres
+    volumes:
+      - .:/var/www/html
   postgres:
     image: postgres:13
     ports:
